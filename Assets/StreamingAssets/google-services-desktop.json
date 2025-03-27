@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "474142825165",
+    "project_id": "tesis-test-f038e",
+    "storage_bucket": "tesis-test-f038e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:474142825165:android:a564d331a9a9b3b6a3a784",
+        "android_client_info": {
+          "package_name": "com.tesis.tesis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl7ewz54nKeyJXlOynnmUWCZ0wr8bHlGk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

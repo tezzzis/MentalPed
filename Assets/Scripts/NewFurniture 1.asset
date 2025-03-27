@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2527d8e49a30f794ebfb0e9c7175a384, type: 3}
+  m_Name: NewFurniture 1
+  m_EditorClassIdentifier: 
+  itemName: www
+  icon: {fileID: 21300000, guid: eb66ac400288763409cf49c60cc8a7d0, type: 3}
+  prefab: {fileID: 1051554625417055653, guid: ad45064456e603f4f8bb97fb102c61d2, type: 3}
+  size: {x: 1, y: 1}
+  precio: 0
+  category: 1
