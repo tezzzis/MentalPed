@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Inventario.unity
     guid: 5e4790ab5ff2cf745bb09289436d17af
+  - enabled: 1
+    path: Assets/Scenes/diario.unity
+    guid: b7984f50c8563c047aac1e49d8040f9f
   m_configObjects: {}

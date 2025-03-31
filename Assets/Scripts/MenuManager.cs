@@ -38,4 +38,8 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("Inventario");
     }
+    public void GoToDiario()
+    {
+        SceneManager.LoadScene("diario");
+    }
 }

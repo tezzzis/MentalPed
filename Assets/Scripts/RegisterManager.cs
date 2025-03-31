@@ -83,7 +83,7 @@ public class RegisterManager : MonoBehaviour
             { "role", selectedRole },
             { "createdAt", Timestamp.GetCurrentTimestamp() },
             { "inventario", CrearInventarioInicial() },
-            { "inventario", CrearEscenarioInicial() } // Se añade el inventario inicial
+            { "escenarios", CrearEscenarioInicial() } // Se añade el inventario inicial
         };
 
         await docRef.SetAsync(userData);
