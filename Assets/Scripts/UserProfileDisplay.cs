@@ -33,25 +33,25 @@ public class UserProfileDisplay : MonoBehaviour
             FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
             // Usamos el correo como ID del documento
-            DocumentReference docRef = db.Collection("usuarios").Document(currentUser.Email);
+            DocumentReference docRef = db.Collection("users").Document(currentUser.Email);
 
             docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
             {
-                if (task.IsCompleted)
+                if (task.IsCompleted && !task.IsFaulted && !task.IsCanceled)
                 {
                     DocumentSnapshot snapshot = task.Result;
 
                     if (snapshot.Exists)
                     {
-                        // Intentamos obtener el valor del campo "name"
-                        if (snapshot.TryGetValue("name", out string nombre))
+                        try
                         {
+                            string nombre = snapshot.GetValue<string>("name");
                             userEmailText.text = $"Usuario: {nombre}";
                         }
-                        else
+                        catch
                         {
                             userEmailText.text = $"Usuario: {currentUser.Email} (sin nombre)";
-                            Debug.LogWarning("Campo 'name' no encontrado en Firestore.");
+                            Debug.LogWarning("No se pudo obtener el campo 'name' correctamente.");
                         }
                     }
                     else

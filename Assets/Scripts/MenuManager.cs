@@ -34,4 +34,8 @@ public class MenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("login");
     }
+    public void GoToInventario()
+    {
+        SceneManager.LoadScene("Inventario");
+    }
 }

@@ -130,7 +130,7 @@ public class GameManager : MonoBehaviour
         {
             ResetBeckContent();
             gameData.lastBeckResetDate = nowLocal.ToString("o");
-            Debug.Log("Reset de Beck aplicado (15 días)");
+            Debug.Log("Reset de Beck aplicado (15 dï¿½as)");
         }
         
     }
@@ -149,7 +149,7 @@ public class GameManager : MonoBehaviour
 
   
 
-    void ResetDailyContent()
+    public void ResetDailyContent()
     {
 
         Debug.Log("Reset diario ejecutado");
@@ -317,7 +317,7 @@ public class GameManager : MonoBehaviour
                 gameData.currentBeckQuestion,
                 selectedAnswer.answerText,
                 "beckQuestions",
-                selectedAnswer.score // <- Añadir parámetro
+                selectedAnswer.score // <- Aï¿½adir parï¿½metro
             );
         }
     }
@@ -336,7 +336,7 @@ public class GameManager : MonoBehaviour
             answer = answer,
             score = score, // <- Nuevo campo
             type = questionType,
-            timestamp = DateTime.UtcNow
+            timestamp = DateTime.UtcNow.ToString("dd-MM")
         };
 
 

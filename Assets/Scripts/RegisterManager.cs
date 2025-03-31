@@ -49,7 +49,7 @@ public class RegisterManager : MonoBehaviour
         string email = emailInput.text;
         string password = passwordInput.text;
 
-        if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password))
+        if (!string.IsNullOrEmpty(email) && !string.IsNullOrEmpty(password) && !string.IsNullOrEmpty(name))
         {
             CreateUserWithEmailAndPassword(email, password, name);
         }
@@ -60,51 +60,80 @@ public class RegisterManager : MonoBehaviour
     }
 
     private async void CreateUserWithEmailAndPassword(string email, string password, string name)
+{
+    if (auth == null)
     {
-        if (auth == null)
-        {
-            feedbackText.text = "Error: Firebase Auth no est� inicializado.";
-            return;
-        }
-
-        try
-        {
-            var userCredential = await auth.CreateUserWithEmailAndPasswordAsync(email, password);
-            FirebaseUser newUser = userCredential.User;
-            feedbackText.text = "Registro exitoso!";
-
-            // 🔽 Guardar el valor del dropdown en Firestore
-            string selectedRole = roleDropdown.options[roleDropdown.value].text;
-
-            DocumentReference docRef = firestore.Collection("users").Document(email);
-            Dictionary<string, object> userData = new Dictionary<string, object>
-            {
-                { "email", email },
-                { "name", name },
-                { "role", selectedRole },
-                { "createdAt", Timestamp.GetCurrentTimestamp() }
-            };
-            await docRef.SetAsync(userData);
-
-            auth.SignOut();
-            await Task.Delay(2000);
-            SceneManager.LoadScene("login");
-        }
-        catch (System.Exception ex)
-        {
-            FirebaseException firebaseEx = ex as FirebaseException;
-            if (firebaseEx != null)
-            {
-                AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
-                feedbackText.text = GetRegisterErrorMessage(errorCode);
-            }
-            else
-            {
-                feedbackText.text = "Error desconocido: " + ex.Message;
-            }
-            Debug.LogError("Error en el registro: " + ex.ToString());
-        }
+        feedbackText.text = "Error: Firebase Auth no está inicializado.";
+        return;
     }
+
+    try
+    {
+        var userCredential = await auth.CreateUserWithEmailAndPasswordAsync(email, password);
+        FirebaseUser newUser = userCredential.User;
+        feedbackText.text = "Registro exitoso!";
+
+        string selectedRole = roleDropdown.options[roleDropdown.value].text;
+
+        DocumentReference docRef = firestore.Collection("users").Document(email);
+        Dictionary<string, object> userData = new Dictionary<string, object>
+        {
+            { "email", email },
+            { "name", name },
+            { "role", selectedRole },
+            { "createdAt", Timestamp.GetCurrentTimestamp() },
+            { "inventario", CrearInventarioInicial() },
+            { "inventario", CrearEscenarioInicial() } // Se añade el inventario inicial
+        };
+
+        await docRef.SetAsync(userData);
+
+        auth.SignOut();
+        await Task.Delay(2000);
+        SceneManager.LoadScene("login");
+    }
+    catch (System.Exception ex)
+    {
+        FirebaseException firebaseEx = ex as FirebaseException;
+        if (firebaseEx != null)
+        {
+            AuthError errorCode = (AuthError)firebaseEx.ErrorCode;
+            feedbackText.text = GetRegisterErrorMessage(errorCode);
+        }
+        else
+        {
+            feedbackText.text = "Error desconocido: " + ex.Message;
+        }
+        Debug.LogError("Error en el registro: " + ex.ToString());
+    }
+}
+
+private Dictionary<string, bool> CrearInventarioInicial()
+{
+    return new Dictionary<string, bool>
+    {
+        { "cabeza_1", false },
+        { "cabeza_2", false },
+        { "cuerpo_1", false },
+        { "cuerpo_2", false }
+    };
+}
+
+private Dictionary<string, bool> CrearEscenarioInicial()
+{
+    return new Dictionary<string, bool>
+    {
+        { "escenario_1", false },
+        { "escenario_2", false },
+        { "escenario_3", false },
+        { "escenario_4", false },
+        { "escenario_5", false },
+        { "escenario_6", false },
+        { "escenario_7", false },
+        { "escenario_8", false }
+    };
+}
+
 
     private string GetRegisterErrorMessage(AuthError errorReason)
     {

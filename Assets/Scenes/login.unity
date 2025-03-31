@@ -578,6 +578,139 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &224733953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 224733954}
+  - component: {fileID: 224733957}
+  - component: {fileID: 224733956}
+  - component: {fileID: 224733955}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &224733954
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224733953}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.2021055, y: 2.2021055, z: 2.2021055}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1761214235}
+  m_Father: {fileID: 546780681}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 287, y: 760}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &224733955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224733953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 224733956}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 713039009}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ResetDailyContent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &224733956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224733953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &224733957
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224733953}
+  m_CullTransparentMesh: 1
 --- !u!1 &308452413
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +820,7 @@ RectTransform:
   - {fileID: 1435747671}
   - {fileID: 684859402}
   - {fileID: 1575701936}
+  - {fileID: 224733954}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1419,6 +1553,554 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684859401}
   m_CullTransparentMesh: 1
+--- !u!1 &713039008
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 713039010}
+  - component: {fileID: 713039009}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &713039009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713039008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d6f6ce309515b44d9248a9cf86a85a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allMissions:
+  - {fileID: 11400000, guid: 76d35d6c345c8d8479e88af6f06377d0, type: 2}
+  - {fileID: 11400000, guid: fc34e3e9e587dae4ea9c121a1c67d9d6, type: 2}
+  - {fileID: 11400000, guid: 44ea12305923d494ba73c685b8174269, type: 2}
+  - {fileID: 11400000, guid: 8c9dce2b5f4667847957a3270fbf6256, type: 2}
+  - {fileID: 11400000, guid: a4a623713d3ed2d428024fb167ac2870, type: 2}
+  allEmotionalQuestions:
+  - questionID: PE_1
+    questionText: "\xBFLograste descansar un poco o la mente no te dej\xF3?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Dormi lo necesario
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Me cost\xF3, pero cerr\xE9 los ojos un rato\u2026 "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Pas\xE9 m\xE1s tiempo viendo el techo que durmiendo"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "La noche fue larga y fr\xEDa\u2026"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_2
+    questionText: "\xBFPudiste darle algo a tu cuerpo hoy?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Com\xED algo, aunque fuera peque\xF1o "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Un sorbo de agua\u2026 y un pedacito de pan "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: " No pude\u2026 pero lo intentar\xE9 m\xE1s tarde"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Hoy no pude\u2026"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_3
+    questionText: "\xBFHubo algo que hicieras por ti, por peque\xF1o que fuera?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Me lav\xE9 la cara\u2026 o me cambi\xE9 de ropa"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Respir\xE9 hondo una vez\u2026 "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Solo sobreviv\xED\u2026 "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: " No pude\u2026"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  allBeckQuestions:
+  - questionID: TB_1
+    questionText: "\xBFC\xF3mo ha sido el clima en tu coraz\xF3n estos d\xEDas?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Hay d\xEDas soleados que me llenan de calma"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "A veces llueve, pero s\xE9 que pasar\xE1"
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Las nubes grises no se van\u2026"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Siento una tormenta constante dentro de m\xED"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_2
+    questionText: "\xBFC\xF3mo imaginas el camino hacia adelante?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Veo senderos libres
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Hay niebla, pero sigo caminando
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Me cuesta ver algo m\xE1s all\xE1 de hoy"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Siento que el camino est\xE1 bloqueado"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_3
+    questionText: "\xBFC\xF3mo te hablas cuando las cosas no salen?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Me recuerdo que puedo intentarlo de nuevo
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: A veces me critico, pero trato de ser amable
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Siento que todo lo que hago est\xE1 mal"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Creo que no sirvo para nada
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_4
+    questionText: "\xBFQu\xE9 tan cerca sientes las cosas que antes te alegraban?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "A\xFAn las siento cerca, como un abrazo"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Las veo, pero no las alcanzo del todo
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Parecen estar detr\xE1s de un cristal"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Es como si nunca hubieran existido
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_5
+    questionText: "\xBFQu\xE9 peso llevas en tu espalda hoy?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Siento ligereza, como una pluma
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Algunas piedras, pero puedo soltarlas
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "La mochila est\xE1 llena\u2026 me cuesta caminar"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Es tan pesada que no me deja respirar
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_6
+    questionText: "\xBFSientes que mereces descansar de las batallas?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "S\xED, todos necesitamos paz"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: 'A veces, pero me cuesta creerlo '
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "No\u2026 siento que debo seguir luchando"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Creo que merezco sufrir
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_7
+    questionText: "\xBFQu\xE9 ves cuando te miras?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "A alguien que est\xE1 aprendiendo"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: A veces me gusta, a veces no
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "A un extra\xF1o que no entiendo"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: 'A alguien que no quiero ser '
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_8
+    questionText: "\xBFC\xF3mo es la voz dentro de tu cabeza?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Es amiga, me anima a seguir
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: A veces es dura, pero trato de calmarla
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Grita cosas que me duelen
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Es un enemigo constante
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_9
+    questionText: "\xBFC\xF3mo est\xE1 tu faro interno hoy?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Brilla
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Parpadea\u2026 necesita cuidado "
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Casi no tiene luz
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Siento que se apag\xF3"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_10
+    questionText: "\xBFHan salido l\xE1grimas de tu nube interna?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "S\xED, y me aliviaron"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Algunas, pero las tragu\xE9"
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Llor\xE9 hasta quedarme vac\xEDo"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Las l\xE1grimas no salen\u2026 y duele"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_11
+    questionText: "\xBFC\xF3mo se siente tu cuerpo hoy?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Tranquilo, como un lago en calma
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Algo inquieto, pero puedo manejarlo
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Como un motor que no puede parar
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Estoy colapsando por dentro
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_12
+    questionText: "\xBFQu\xE9 tan fuerte es tu im\xE1n para las cosas que te gustaban?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: " A\xFAn atrae, como antes "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Se debilit\xF3, pero sigue ah\xED"
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Casi no siento su fuerza
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Es como si nunca hubiera existido
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_13
+    questionText: "\xBFC\xF3mo te sientes al elegir un camino?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Seguro/a, conf\xEDo en mis pasos"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Dudo, pero sigo adelante
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Me paralizo\u2026 no s\xE9 qu\xE9 hacer"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Siento que todas las opciones est\xE1n mal"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_14
+    questionText: "\xBFQu\xE9 lugar ocupas en tu propio universo?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Soy una estrella \xFAnica "
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: A veces brillo, a veces me escondo
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Me siento como polvo olvidado en el espacio
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Creo que ni siquiera existo en este mapa
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_15
+    questionText: "\xBFC\xF3mo est\xE1 tu bater\xEDa interna hoy?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Cargada, lista para el d\xEDa"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Medio llena\u2026 necesito recargar"
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "En rojo\u2026 apenas funciono"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Apagada\u2026 no puedo moverme"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_16
+    questionText: "\xBFC\xF3mo ha sido tu viaje al mundo de los sue\xF1os?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Tranquilo, como un r\xEDo bajo la luna"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Algo inquieto, pero logr\xE9 descansar"
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Lleno de obst\xE1culos y pesadillas"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "No pude viajar\u2026 me quede a la orilla"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_17
+    questionText: "\xBFC\xF3mo est\xE1 tu term\xF3metro de paciencia hoy?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "En calma, como un jard\xEDn zen"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Algo caliente, pero lo manejo
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: caliente, un poco mas de lo habitual
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "Hirviendo\u2026 exploto f\xE1cilmente"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_18
+    questionText: "\xBFC\xF3mo est\xE1 el jard\xEDn de tu cuerpo hoy? \xBFLas flores
+      piden agua o hay tierra sedienta?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Las flores est\xE1n regadas y felices"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Algunas plantas piden m\xE1s cuidado\u2026 "
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "La tierra est\xE1 seca\u2026 las ra\xEDces no alcanzan"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: "El jard\xEDn parece dormido\u2026 sin peticiones"
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_19
+    questionText: "\xBFC\xF3mo se siente tu foco hoy?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "N\xEDtido, como una lupa"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Borroneado, pero sigo intentando
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Roto en mil pedazos
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Perdido en la niebla
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_20
+    questionText: "\xBFQu\xE9 tan pesado se siente tu cuerpo?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Ligero, como una pluma
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Algo cargado, pero puedo moverme
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: Como si llevara piedras en los bolsillos
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Siento que me hundo en el suelo
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  - questionID: TB_21
+    questionText: "\xBFC\xF3mo te hablas cuando las cosas no salen?"
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Me recuerdo que puedo intentarlo de nuevo
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: A veces me critico, pero trato de ser amable
+      coinReward: 10
+      xpReward: 10
+      score: 1
+    - answerText: "Siento que todo lo que hago est\xE1 mal"
+      coinReward: 10
+      xpReward: 10
+      score: 2
+    - answerText: Creo que no sirvo para nada
+      coinReward: 10
+      xpReward: 10
+      score: 3
+  gameData1:
+    coins: 0
+    xp: 0
+    beckTotalScore: 0
+    completedMissions: []
+    currentDailyMissions: []
+    completedEmotionalQuestions: []
+    completedBeckQuestions: []
+    currentEmotionalQuestion: 
+    currentBeckQuestion: 
+    lastLoginDate: 
+    lastResetDate: 
+    lastBeckResetDate: 
+    pendingCoinReward: 0
+    pendingXpReward: 0
+--- !u!4 &713039010
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713039008}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 396.35574, y: 1081.4908, z: 33.104015}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &842006312
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,6 +3605,140 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1761214234
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1761214235}
+  - component: {fileID: 1761214237}
+  - component: {fileID: 1761214236}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1761214235
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761214234}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 224733954}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1761214236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761214234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Button
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1761214237
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761214234}
+  m_CullTransparentMesh: 1
 --- !u!1 &1858529836
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,3 +4545,4 @@ SceneRoots:
   - {fileID: 546780681}
   - {fileID: 1866161979}
   - {fileID: 1359024336}
+  - {fileID: 713039010}

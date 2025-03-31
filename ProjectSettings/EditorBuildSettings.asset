@@ -15,12 +15,15 @@ EditorBuildSettings:
     path: Assets/Scenes/main.unity
     guid: dfcfa1975d876d947ac6fc9414e44c59
   - enabled: 1
-    path: Assets/Scenes/gacha.unity
+    path: Assets/Scenes/New Folder/gacha.unity
     guid: ea82cd9c33b2d1b45b22db612b3b06f2
   - enabled: 1
-    path: Assets/Scenes/tienda.unity
+    path: Assets/Scenes/New Folder/tienda.unity
     guid: b6f4f51c5eccd0340b0289af2bd679a9
   - enabled: 1
     path: Assets/Scenes/diaria.unity
     guid: ea9dda5eddf33dd42bbbd89d64049b68
+  - enabled: 1
+    path: Assets/Scenes/Inventario.unity
+    guid: 5e4790ab5ff2cf745bb09289436d17af
   m_configObjects: {}
