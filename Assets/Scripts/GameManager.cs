@@ -437,12 +437,12 @@ public class GameManager : MonoBehaviour
         if (auth != null)
         {
             auth.SignOut();
+            PlayerPrefs.DeleteKey("GameData");
+            SceneManager.LoadScene("login");
+        }else{
+            Debug.Log("no funciona estaasdasdsadsad");
         }
-
-       
-
-
-        SceneManager.LoadScene("login");
+        
     }
 
 
