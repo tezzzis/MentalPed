@@ -28,21 +28,31 @@ public class LoginManager : MonoBehaviour
         }
     }
 
-    private void InitializeAuth()
+    private async void InitializeAuth()
     {
         auth = FirebaseAuth.DefaultInstance;
-        VerifyCurrentUser();
+        await VerifyCurrentUser();
     }
 
-    private void VerifyCurrentUser()
+   private async Task VerifyCurrentUser()
+{
+    FirebaseUser currentUser = auth.CurrentUser;
+    if (currentUser != null)
     {
-        FirebaseUser currentUser = auth.CurrentUser;
-        if (currentUser != null)
+        await currentUser.ReloadAsync(); // Recargar el usuario
+        currentUser = auth.CurrentUser; // Obtener los datos actualizados
+
+        if (!string.IsNullOrEmpty(currentUser.Email)) // Asegurar que los datos están completos
         {
             feedbackText.text = "Bienvenido de vuelta!";
             SceneManager.LoadScene("main");
         }
+        else
+        {
+            feedbackText.text = "Error al cargar los datos del usuario";
+        }
     }
+}
 
     public void Login()
     {
