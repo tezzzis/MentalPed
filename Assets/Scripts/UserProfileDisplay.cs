@@ -33,7 +33,8 @@ public class UserProfileDisplay : MonoBehaviour
             FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
 
             // Usamos el correo como ID del documento
-            DocumentReference docRef = db.Collection("users").Document(currentUser.Email);
+            string emailLower = currentUser.Email.ToLower();
+            DocumentReference docRef = db.Collection("users").Document(emailLower);
 
             docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
             {

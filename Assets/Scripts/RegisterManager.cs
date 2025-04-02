@@ -69,16 +69,17 @@ public class RegisterManager : MonoBehaviour
 
     try
     {
+
         var userCredential = await auth.CreateUserWithEmailAndPasswordAsync(email, password);
         FirebaseUser newUser = userCredential.User;
         feedbackText.text = "Registro exitoso!";
 
         string selectedRole = roleDropdown.options[roleDropdown.value].text;
-
-        DocumentReference docRef = firestore.Collection("users").Document(email);
+        string emailLower = email.ToLower();
+        DocumentReference docRef = firestore.Collection("users").Document(emailLower);
         Dictionary<string, object> userData = new Dictionary<string, object>
         {
-            { "email", email },
+            { "email", emailLower },
             { "name", name },
             { "role", selectedRole },
             { "createdAt", Timestamp.GetCurrentTimestamp() },

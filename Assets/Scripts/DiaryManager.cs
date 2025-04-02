@@ -21,12 +21,21 @@ public class DiaryManager : MonoBehaviour
     void Start()
     {
         db = FirebaseFirestore.DefaultInstance;
-
         felizButton.onClick.AddListener(() => SeleccionarEmocion("feliz"));
         medioButton.onClick.AddListener(() => SeleccionarEmocion("medio"));
         tristeButton.onClick.AddListener(() => SeleccionarEmocion("triste"));
         guardarButton.onClick.AddListener(GuardarEntrada);
+        ResetUI(); // Inicializar UI oculta
+    }
 
+    void OnEnable() // Resetear UI al abrir el diario
+    {
+        ResetUI();
+    }
+    void ResetUI()
+    {
+        emocionSeleccionada = null;
+        inputField.text = "";
         inputField.gameObject.SetActive(false);
         guardarButton.gameObject.SetActive(false);
     }
@@ -48,21 +57,24 @@ public class DiaryManager : MonoBehaviour
             return;
         }
 
-        if (string.IsNullOrEmpty(emocionSeleccionada) || string.IsNullOrEmpty(inputField.text))
+        // Validación detallada
+        if (string.IsNullOrEmpty(emocionSeleccionada))
         {
-            Debug.LogError("Faltan datos");
+            Debug.LogError("Error: No se seleccionó ninguna emoción.");
             return;
         }
 
-        // Generar el ID con la fecha actual (formato: YYYY-MM-DD)
-        string fechaHoy = DateTime.Now.ToString("yyyy-MM-dd");
+        if (string.IsNullOrEmpty(inputField.text))
+        {
+            Debug.LogError("Error: El texto del diario está vacío.");
+            return;
+        }
 
-        // Referencia al documento con ID = fecha actual
-        DocumentReference entryRef = db
-            .Collection("users")
-            .Document(user.Email)
-            .Collection("diario")
-            .Document(fechaHoy); // <- ID personalizado
+        string fechaHoy = DateTime.Now.ToString("yyyy-MM-dd");
+        DocumentReference entryRef = db.Collection("users")
+                                      .Document(user.Email)
+                                      .Collection("diario")
+                                      .Document(fechaHoy);
 
         var entryData = new DiaryEntry
         {
@@ -73,19 +85,14 @@ public class DiaryManager : MonoBehaviour
 
         try
         {
-            // Guardar o actualizar el documento
+            Debug.Log($"Subiendo: {entryData.emocion} - {entryData.texto}"); // Log de depuración
             await entryRef.SetAsync(entryData, SetOptions.MergeAll);
-            Debug.Log("Entrada guardada con fecha: " + fechaHoy);
-
-            // Limpiar UI
-            inputField.text = "";
-            inputField.gameObject.SetActive(false);
-            guardarButton.gameObject.SetActive(false);
-            emocionSeleccionada = null;
+            Debug.Log("Entrada guardada exitosamente.");
+            ResetUI(); // Limpiar UI después de guardar
         }
         catch (Exception e)
         {
-            Debug.LogError("Error al guardar: " + e.Message);
+            Debug.LogError($"Error al guardar: {e.Message}");
         }
     }
 }

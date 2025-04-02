@@ -93,35 +93,33 @@ public class FirebaseInitializer : MonoBehaviour
         GuardarTokenEnFirestore(userEmail, token.Token);
     }
     private void GuardarTokenEnFirestore(string userEmail, string token)
-{
-    // Crea un objeto con el token y la fecha de creacion
-    var tokenData = new
     {
-        token = token,
-        timestamp = DateTime.UtcNow
-    };
-
-    // Referencia al documento de Firestore
-    var docRef = FirebaseFirestore.DefaultInstance
-        .Collection("users")  
-        .Document(userEmail);     
-
-    // Guardamos el token
-    docRef.SetAsync(tokenData).ContinueWithOnMainThread(task =>
-    {
-        if (task.IsFaulted)
+        var tokenData = new
         {
-            Debug.LogError("Error al guardar el token en Firestore: " + task.Exception);
-        }
-        else
+            token = token,
+            timestamp = DateTime.UtcNow
+        };
+
+        var docRef = FirebaseFirestore.DefaultInstance
+            .Collection("users")
+            .Document(userEmail);
+
+        // Usar Merge para no sobrescribir el documento completo
+        docRef.SetAsync(tokenData, SetOptions.MergeAll).ContinueWithOnMainThread(task =>
         {
-            Debug.Log("Token FCM guardado correctamente para el usuario: " + userEmail);
-        }
-    });
-}
+            if (task.IsFaulted)
+            {
+                Debug.LogError("Error al guardar el token: " + task.Exception);
+            }
+            else
+            {
+                Debug.Log("Token guardado (merge) correctamente.");
+            }
+        });
+    }
 
 
-    
+
     private void OnMessageReceived(object sender, MessageReceivedEventArgs e)
     {
         Debug.Log("Mensaje recibido: " + e.Message);
