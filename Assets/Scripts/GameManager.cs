@@ -290,7 +290,7 @@ public class GameManager : MonoBehaviour
         gameData.completedMissions.Add(missionID);
         gameData.currentDailyMissions.Remove(missionID);
 
-Debug.Log("asdsadsaddsa------------------------------------------------------------------------");
+        Debug.Log("asdsadsaddsa------------------------------------------------------------------------");
 
 
         SaveGameData();

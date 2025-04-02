@@ -47,23 +47,23 @@ public class UserProfileDisplay : MonoBehaviour
                         try
                         {
                             string nombre = snapshot.GetValue<string>("name");
-                            userEmailText.text = $"Usuario: {nombre}";
+                            userEmailText.text = $"{nombre}";
                         }
                         catch
                         {
-                            userEmailText.text = $"Usuario: {currentUser.Email} (sin nombre)";
+                            userEmailText.text = $"{currentUser.Email} (sin nombre)";
                             Debug.LogWarning("No se pudo obtener el campo 'name' correctamente.");
                         }
                     }
                     else
                     {
-                        userEmailText.text = $"Usuario: {currentUser.Email} (documento no existe)";
+                        userEmailText.text = $"{currentUser.Email} (documento no existe)";
                         Debug.LogWarning("Documento del usuario no existe en Firestore.");
                     }
                 }
                 else
                 {
-                    userEmailText.text = $"Usuario: {currentUser.Email} (error al cargar datos)";
+                    userEmailText.text = $"{currentUser.Email} (error al cargar datos)";
                     Debug.LogError("Error al obtener documento desde Firestore: " + task.Exception);
                 }
             });
