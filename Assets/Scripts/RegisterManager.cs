@@ -82,6 +82,7 @@ public class RegisterManager : MonoBehaviour
             { "name", name },
             { "role", selectedRole },
             { "createdAt", Timestamp.GetCurrentTimestamp() },
+            { "coins", 0 },
             { "inventario", CrearInventarioInicial() },
             { "escenarios", CrearEscenarioInicial() } // Se añade el inventario inicial
         };
@@ -123,7 +124,7 @@ private Dictionary<string, bool> CrearEscenarioInicial()
 {
     return new Dictionary<string, bool>
     {
-        { "escenario_1", false },
+        { "escenario_1", true },
         { "escenario_2", false },
         { "escenario_3", false },
         { "escenario_4", false },

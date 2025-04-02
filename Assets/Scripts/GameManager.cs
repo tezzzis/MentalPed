@@ -200,7 +200,11 @@ public class GameManager : MonoBehaviour
     {
         gameData.coins += amount;
         OnDataChanged?.Invoke();
+        Debug.Log("asdsadsaddsa------------------------------------------------------------------------");
+
+
         SaveGameData();
+        UpdateCoinsInFirestore(gameData.coins);
     }
 
     public void AddXP(int amount)
@@ -286,7 +290,11 @@ public class GameManager : MonoBehaviour
         gameData.completedMissions.Add(missionID);
         gameData.currentDailyMissions.Remove(missionID);
 
+Debug.Log("asdsadsaddsa------------------------------------------------------------------------");
+
+
         SaveGameData();
+        UpdateCoinsInFirestore(gameData.coins);
     }
 
     public void AnswerEmotionalQuestion(Answer selectedAnswer)
@@ -444,6 +452,52 @@ public class GameManager : MonoBehaviour
         }
         
     }
+
+    public void SpendCoins(int amount)
+{
+    if (gameData.coins >= amount)
+    {
+        gameData.coins -= amount;
+        OnDataChanged?.Invoke();
+        SaveGameData();
+        UpdateCoinsInFirestore(gameData.coins);
+        Debug.Log("Monedas gastadas: " + amount + ", monedas restantes: " + gameData.coins);
+    }
+    else
+    {
+        Debug.Log("No hay suficientes monedas para gastar");
+    }
+}
+
+/// <summary>
+/// Actualiza la cantidad de monedas en Firebase Firestore.
+/// </summary>
+private void UpdateCoinsInFirestore(int newCoinAmount)
+{
+    Debug.Log("asdsadsaddsa------------------------------------------------------------------------");
+
+    if (string.IsNullOrEmpty(userEmail))
+    {
+        Debug.LogError("No se puede actualizar Firestore: Usuario no autenticado.");
+        return;
+    }
+
+    DocumentReference userRef = db.Collection("users").Document(userEmail);
+    userRef.UpdateAsync(new Dictionary<string, object>
+    {
+        { "coins", newCoinAmount }
+    }).ContinueWithOnMainThread(task =>
+    {
+        if (task.IsCompletedSuccessfully)
+        {
+            Debug.Log("Monedas actualizadas en Firestore: " + newCoinAmount);
+        }
+        else
+        {
+            Debug.LogError("Error actualizando monedas en Firestore: " + task.Exception);
+        }
+    });
+}
 
 
 }

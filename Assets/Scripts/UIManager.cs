@@ -225,12 +225,12 @@ public class UIManager : MonoBehaviour
         beckFinalScoreText.text = $"Puntaje total: {GameManager.Instance.GameData.beckTotalScore}/63";
         beckResultPanel.SetActive(true);
 
-        // Interpretación básica
+        // Interpretaciï¿½n bï¿½sica
         string interpretation = "";
-        if (GameManager.Instance.GameData.beckTotalScore <= 13) interpretation = "Depresión mínima";
-        else if (GameManager.Instance.GameData.beckTotalScore <= 19) interpretation = "Depresión leve";
-        else if (GameManager.Instance.GameData.beckTotalScore <= 28) interpretation = "Depresión moderada";
-        else interpretation = "Depresión severa";
+        if (GameManager.Instance.GameData.beckTotalScore <= 13) interpretation = "Depresiï¿½n mï¿½nima";
+        else if (GameManager.Instance.GameData.beckTotalScore <= 19) interpretation = "Depresiï¿½n leve";
+        else if (GameManager.Instance.GameData.beckTotalScore <= 28) interpretation = "Depresiï¿½n moderada";
+        else interpretation = "Depresiï¿½n severa";
 
         beckFinalScoreText.text += $"\n({interpretation})";
     }
@@ -252,7 +252,7 @@ public class UIManager : MonoBehaviour
             if (i < dailyMissions.Count)
             {
                 Mission m = dailyMissions[i];
-                missionButtonTexts[i].text = $"{m.description}\n          <sprite name=\"coin\"> {m.coinReward}                  <sprite name=\"star\"> {m.xpReward}";
+                missionButtonTexts[i].text = $"{m.description}\n          <sprite name=\"coin\"> {m.coinReward}";
 
 
 
@@ -264,7 +264,7 @@ public class UIManager : MonoBehaviour
             else
             {
                 
-                missionButtonTexts[i].text = "Misión no disponible";
+                missionButtonTexts[i].text = "Misiï¿½n no disponible";
                 missionButtons[i].interactable = false;
                 
             }

@@ -238,21 +238,36 @@ public class InventarioManager : MonoBehaviour
     {
         Dictionary<string, Color> colores = new Dictionary<string, Color>
         {
-            { "prueba_Escenario1", Color.red },
-            { "prueba_Escenario2", Color.blue },
-            { "prueba_Escenario3", Color.green },
-            { "prueba_Escenario4", Color.cyan },
-            { "prueba_Escenario5", Color.magenta }
+            { "prueba_Escenario1", HexToColor("#E0F2F1") },
+            { "prueba_Escenario2", HexToColor("#CDD5E0") },
+            { "prueba_Escenario3", HexToColor("#E8EFCF") },
+            { "prueba_Escenario4", HexToColor("#EDC6B1") },
+            { "prueba_Escenario5", HexToColor("#D1B2DF") },
+            { "prueba_Escenario6", HexToColor("#A1CCD1") },
+            { "prueba_Escenario7", HexToColor("#B7B7B7") },
+            { "prueba_Escenario8", HexToColor("#F2E1FF") }
         };
 
         if (colores.ContainsKey(nombreItem))
         {
             return colores[nombreItem];
         }
+
+        
         
         Debug.LogWarning($"El nombre '{nombreItem}' no está en el diccionario, asignando color amarillo.");
         return Color.yellow;
     }
+
+    Color HexToColor(string hex)
+{
+    Color color;
+    if (ColorUtility.TryParseHtmlString(hex, out color))
+    {
+        return color;
+    }
+    return Color.white; // Color por defecto si el formato es inválido
+}
 
     void MostrarPanelCompra(string claveItem, GameObject itemObjeto)
     {
@@ -289,33 +304,34 @@ public class InventarioManager : MonoBehaviour
     }
 
     async void RealizarCompra(string claveItem, GameObject itemObjeto)
+{
+    int precio = 50;
+    
+    // Verificar que se tienen suficientes monedas usando GameManager
+    if (GameManager.Instance.GameData.coins >= precio)
     {
-        int monedasDisponibles = 100; // Aquí deberías obtener las monedas reales del usuario
-        int precio = 50;
+        // Gasta las monedas mediante el método del GameManager
+        GameManager.Instance.SpendCoins(precio);
 
-        if (monedasDisponibles >= precio)
+        try
         {
-            monedasDisponibles -= precio;
-
-            try
-            {
-                DocumentReference docRef = db.Collection("users").Document(user.Email);
-                await docRef.UpdateAsync($"escenarios.{claveItem}", true);
-                
-                Debug.Log($"Base de datos actualizada para {claveItem}");
-                ConfigurarItem(itemObjeto, true, claveItem);
-                panelCompra.SetActive(false);
-                Debug.Log("Compra realizada con éxito");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError("Error al actualizar la BD: " + e.Message);
-            }
+            DocumentReference docRef = db.Collection("users").Document(user.Email);
+            await docRef.UpdateAsync($"escenarios.{claveItem}", true);
+            
+            Debug.Log($"Base de datos actualizada para {claveItem}");
+            ConfigurarItem(itemObjeto, true, claveItem);
+            panelCompra.SetActive(false);
+            Debug.Log("Compra realizada con éxito");
         }
-        else
+        catch (System.Exception e)
         {
-            Debug.Log("No tienes suficientes monedas");
-            // Aquí puedes mostrar otro popup indicando que no hay suficientes monedas
+            Debug.LogError("Error al actualizar la BD: " + e.Message);
         }
     }
+    else
+    {
+        Debug.Log("No tienes suficientes monedas");
+        // Aquí puedes mostrar otro popup indicando que no hay suficientes monedas
+    }
+}
 }
