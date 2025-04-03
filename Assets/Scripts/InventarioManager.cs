@@ -1,15 +1,17 @@
 using UnityEngine;
 using Firebase.Firestore;
 using Firebase.Auth;
+using TMPro;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine.UI;
+
 
 public class InventarioManager : MonoBehaviour
 {
     public Transform contenedorItems; // El parent donde están todos los items
     public GameObject panelCompra;      // Panel de compra asignado desde el Inspector
-    public Text textoPopup;             // Texto dentro del panel de compra
+    public TextMeshProUGUI textoPopup;         // Texto dentro del panel de compra
     public Button btnComprar, btnCancelar; // Botones del popup
     public GameObject objetoSeleccionado;  // Objeto que cambiará de color si está desbloqueado
 
@@ -299,15 +301,17 @@ public class InventarioManager : MonoBehaviour
     return Color.white; // Color por defecto si el formato es inválido
 }
 
-    void MostrarPanelCompra(string claveItem, GameObject itemObjeto)
+     void MostrarPanelCompra(string claveItem, GameObject itemObjeto)
     {
         if (panelCompra != null)
         {
             panelCompra.SetActive(true);
-            
+
+            string nombreColor = nombresColores.ContainsKey(itemObjeto.name) ? nombresColores[itemObjeto.name] : "Color Desconocido";
+
             if (textoPopup != null)
             {
-                textoPopup.text = $"¿Deseas comprar {claveItem}?";
+                textoPopup.text = $"¿Quieres comprar {nombreColor} por 50?";
             }
             else
             {
@@ -332,6 +336,7 @@ public class InventarioManager : MonoBehaviour
             Debug.LogError("panelCompra no está asignado en el Inspector");
         }
     }
+
 
     async void RealizarCompra(string claveItem, GameObject itemObjeto)
 {

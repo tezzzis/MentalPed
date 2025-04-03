@@ -454,7 +454,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: deseas comprar?
+  m_text: "\xBFdeseas comprar?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ef473790856c58848a32a5181dfa18fb, type: 2}
   m_sharedMaterial: {fileID: -6248497901728052944, guid: ef473790856c58848a32a5181dfa18fb, type: 2}
@@ -4342,7 +4342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contenedorItems: {fileID: 1999498463}
   panelCompra: {fileID: 2124226820}
-  textoPopup: {fileID: 286992517}
+  textoPopup: {fileID: 95333204}
   btnComprar: {fileID: 255283637}
   btnCancelar: {fileID: 755162814}
   objetoSeleccionado: {fileID: 1313285055}
