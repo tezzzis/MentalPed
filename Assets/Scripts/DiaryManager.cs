@@ -15,8 +15,15 @@ public class DiaryManager : MonoBehaviour
     public TMP_InputField inputField;
     public Button guardarButton;
 
+    [Header("Panel de Confirmación")]
+    public GameObject panelExito;
+    public TMP_Text textoExito;
+    public Button botonRegresar;
+
     private string emocionSeleccionada;
     private FirebaseFirestore db;
+
+
 
     void Start()
     {
@@ -25,20 +32,14 @@ public class DiaryManager : MonoBehaviour
         medioButton.onClick.AddListener(() => SeleccionarEmocion("medio"));
         tristeButton.onClick.AddListener(() => SeleccionarEmocion("triste"));
         guardarButton.onClick.AddListener(GuardarEntrada);
-        ResetUI(); // Inicializar UI oculta
+        botonRegresar.onClick.AddListener(() =>
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("main");
+        });
+        
     }
 
-    void OnEnable() // Resetear UI al abrir el diario
-    {
-        ResetUI();
-    }
-    void ResetUI()
-    {
-        emocionSeleccionada = null;
-        inputField.text = "";
-        inputField.gameObject.SetActive(false);
-        guardarButton.gameObject.SetActive(false);
-    }
+
 
     void SeleccionarEmocion(string emocion)
     {
@@ -57,7 +58,7 @@ public class DiaryManager : MonoBehaviour
             return;
         }
 
-        // Validación detallada
+        // Validación detallada (sin cambios)
         if (string.IsNullOrEmpty(emocionSeleccionada))
         {
             Debug.LogError("Error: No se seleccionó ninguna emoción.");
@@ -70,11 +71,13 @@ public class DiaryManager : MonoBehaviour
             return;
         }
 
-        string fechaHoy = DateTime.Now.ToString("yyyy-MM-dd");
+        // Modificación clave: Crear un ID único con milisegundos
+        string fechaUnica = DateTime.Now.ToString("yyyy-MM-dd_HHmmssfff");
+
         DocumentReference entryRef = db.Collection("users")
-                                      .Document(user.Email)
-                                      .Collection("diario")
-                                      .Document(fechaHoy);
+                                     .Document(user.Email)
+                                     .Collection("diario")
+                                     .Document(fechaUnica); // Usamos el nuevo ID único
 
         var entryData = new DiaryEntry
         {
@@ -85,10 +88,11 @@ public class DiaryManager : MonoBehaviour
 
         try
         {
-            Debug.Log($"Subiendo: {entryData.emocion} - {entryData.texto}"); // Log de depuración
-            await entryRef.SetAsync(entryData, SetOptions.MergeAll);
+            Debug.Log($"Subiendo: {entryData.emocion} - {entryData.texto}");
+            await entryRef.SetAsync(entryData); // Sin MergeAll para no actualizar existentes
             Debug.Log("Entrada guardada exitosamente.");
-            ResetUI(); // Limpiar UI después de guardar
+            panelExito.SetActive(true);
+            textoExito.text = "¡Entrada guardada con éxito!\n¿Deseas regresar al menú principal?";
         }
         catch (Exception e)
         {

@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
 
         DateTime nowLocal = DateTime.Now;
-        DateTime todayReset = new DateTime(nowLocal.Year, nowLocal.Month, nowLocal.Day, 13, 45, 0);
+        DateTime todayReset = new DateTime(nowLocal.Year, nowLocal.Month, nowLocal.Day, 1, 0, 0);
         DateTime lastReset = gameData.lastResetDate != "" ?
         DateTime.Parse(gameData.lastResetDate) :
         DateTime.MinValue;
