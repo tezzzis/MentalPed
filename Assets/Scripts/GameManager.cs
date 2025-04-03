@@ -87,9 +87,6 @@ public class GameManager : MonoBehaviour
     {
         LoadGameData();
 
-
-
-
         DateTime nowLocal = DateTime.Now;
         DateTime todayReset = new DateTime(nowLocal.Year, nowLocal.Month, nowLocal.Day, 1, 0, 0);
         DateTime lastReset = gameData.lastResetDate != "" ?
@@ -103,7 +100,7 @@ public class GameManager : MonoBehaviour
         // Verificar si la hora actual es mayor a la hora del reset
         if (nowLocal >= todayReset)
         {
-            ResetBeckContent();
+            //ResetBeckContent();
             // ResetDailyContent();
             if (lastReset < todayReset)
             {

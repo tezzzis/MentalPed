@@ -15,7 +15,7 @@ public class DiaryManager : MonoBehaviour
     public TMP_InputField inputField;
     public Button guardarButton;
 
-    [Header("Panel de Confirmación")]
+    [Header("Panel de Confirmaciï¿½n")]
     public GameObject panelExito;
     public TMP_Text textoExito;
     public Button botonRegresar;
@@ -58,26 +58,26 @@ public class DiaryManager : MonoBehaviour
             return;
         }
 
-        // Validación detallada (sin cambios)
+        // Validaciï¿½n detallada (sin cambios)
         if (string.IsNullOrEmpty(emocionSeleccionada))
         {
-            Debug.LogError("Error: No se seleccionó ninguna emoción.");
+            Debug.LogError("Error: No se seleccionï¿½ ninguna emociï¿½n.");
             return;
         }
 
         if (string.IsNullOrEmpty(inputField.text))
         {
-            Debug.LogError("Error: El texto del diario está vacío.");
+            Debug.LogError("Error: El texto del diario estï¿½ vacï¿½o.");
             return;
         }
 
-        // Modificación clave: Crear un ID único con milisegundos
+        // Modificaciï¿½n clave: Crear un ID ï¿½nico con milisegundos
         string fechaUnica = DateTime.Now.ToString("yyyy-MM-dd_HHmmssfff");
 
         DocumentReference entryRef = db.Collection("users")
                                      .Document(user.Email)
                                      .Collection("diario")
-                                     .Document(fechaUnica); // Usamos el nuevo ID único
+                                     .Document(fechaUnica); // Usamos el nuevo ID ï¿½nico
 
         var entryData = new DiaryEntry
         {
@@ -92,7 +92,7 @@ public class DiaryManager : MonoBehaviour
             await entryRef.SetAsync(entryData); // Sin MergeAll para no actualizar existentes
             Debug.Log("Entrada guardada exitosamente.");
             panelExito.SetActive(true);
-            textoExito.text = "¡Entrada guardada con éxito!\n¿Deseas regresar al menú principal?";
+            textoExito.text = "Â¡Anotacion guardada!";
         }
         catch (Exception e)
         {

@@ -145,55 +145,72 @@ public class InventarioManager : MonoBehaviour
     }
 
     void ConfigurarItem(GameObject item, bool desbloqueado, string claveBD)
+{
+    Debug.Log($"Configurando item: {item.name}, desbloqueado: {desbloqueado}");
+    
+    // Buscar el objeto "prueba" dentro del item
+    Transform pruebaTransform = item.transform.Find("prueba");
+    Transform textoTransform = item.transform.Find("Text (TMP)"); // Buscar el texto
+
+    if (pruebaTransform != null && textoTransform != null)
     {
-        Debug.Log($"Configurando item: {item.name}, desbloqueado: {desbloqueado}");
-        
-        // Buscar el objeto "prueba" dentro del item
-        Transform pruebaTransform = item.transform.Find("prueba");
-        
-        if (pruebaTransform != null)
+        Image img = pruebaTransform.GetComponent<Image>();
+        TMPro.TextMeshProUGUI textoTMP = textoTransform.GetComponent<TMPro.TextMeshProUGUI>();
+
+        if (img != null && textoTMP != null)
         {
-            Image img = pruebaTransform.GetComponent<Image>();
-            if (img != null)
-            {
-                img.color = desbloqueado ? Color.white : Color.gray;
-                Debug.Log($"Color cambiado para {item.name}");
-            }
-            else
-            {
-                Debug.LogError($"No se encontró componente Image en prueba de {item.name}");
-            }
-            
-            // Configurar el botón en el item
-            Button btn = item.GetComponent<Button>();
-            if (btn == null)
-            {
-                btn = item.AddComponent<Button>();
-                Debug.Log($"Botón agregado a {item.name}");
-            }
-            
-            btn.onClick.RemoveAllListeners();
-            
             if (desbloqueado)
             {
-                btn.onClick.AddListener(() => {
-                    Debug.Log($"Item desbloqueado seleccionado: {item.name}");
-                    SeleccionarItem(item);
-                });
+                Color colorAsignado = ObtenerColorParaItem(item.name);
+                img.color = Color.white; // Se puede dejar en blanco para indicar desbloqueado
+                
+                // Obtener el nombre del color desde el diccionario
+                string nombreColor = nombresColores.ContainsKey(item.name) ? nombresColores[item.name] : "Color Desconocido";
+                textoTMP.text = nombreColor; // Se muestra el nombre del color
             }
             else
             {
-                btn.onClick.AddListener(() => {
-                    Debug.Log($"Mostrando panel de compra para: {item.name}");
-                    MostrarPanelCompra(claveBD, item);
-                });
+                img.color = Color.gray; // Indicar que está bloqueado
+                textoTMP.text = "50"; // Precio del objeto
             }
+
+            Debug.Log($"Texto actualizado para {item.name}: {textoTMP.text}");
         }
         else
         {
-            Debug.LogError($"No se encontró el objeto 'prueba' en {item.name}");
+            Debug.LogError($"No se encontró componente Image o TextMeshPro en {item.name}");
+        }
+
+        // Configurar el botón en el item
+        Button btn = item.GetComponent<Button>();
+        if (btn == null)
+        {
+            btn = item.AddComponent<Button>();
+            Debug.Log($"Botón agregado a {item.name}");
+        }
+
+        btn.onClick.RemoveAllListeners();
+
+        if (desbloqueado)
+        {
+            btn.onClick.AddListener(() => {
+                Debug.Log($"Item desbloqueado seleccionado: {item.name}");
+                SeleccionarItem(item);
+            });
+        }
+        else
+        {
+            btn.onClick.AddListener(() => {
+                Debug.Log($"Mostrando panel de compra para: {item.name}");
+                MostrarPanelCompra(claveBD, item);
+            });
         }
     }
+    else
+    {
+        Debug.LogError($"No se encontró el objeto 'prueba' o 'Text (TMP)' en {item.name}");
+    }
+}
 
     // Al seleccionar un item se cambia el color del objetoSeleccionado y se guarda
     void SeleccionarItem(GameObject item)
@@ -232,6 +249,19 @@ public class InventarioManager : MonoBehaviour
         PlayerPrefs.Save();
         Debug.Log("Color guardado: " + color);
     }
+
+    /// guardar nombree
+    Dictionary<string, string> nombresColores = new Dictionary<string, string>
+{
+    { "prueba_Escenario1", "Turquesa Claro" },
+    { "prueba_Escenario2", "Gris Azulado" },
+    { "prueba_Escenario3", "Verde Pastel" },
+    { "prueba_Escenario4", "Durazno" },
+    { "prueba_Escenario5", "Lavanda" },
+    { "prueba_Escenario6", "Aqua Suave" },
+    { "prueba_Escenario7", "Gris Neutro" },
+    { "prueba_Escenario8", "Lila Claro" }
+};
 
     // Devuelve un color basado en el nombre del item seleccionado
     Color ObtenerColorParaItem(string nombreItem)
