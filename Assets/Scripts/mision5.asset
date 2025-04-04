@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: mision5
   m_EditorClassIdentifier: 
   missionID: M_5
-  description: m5
-  coinReward: 0
+  description: 'Cominucate con alguien hoy '
+  coinReward: 10
   xpReward: 0

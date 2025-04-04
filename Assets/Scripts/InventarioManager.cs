@@ -173,7 +173,7 @@ public class InventarioManager : MonoBehaviour
             else
             {
                 img.color = Color.gray; // Indicar que está bloqueado
-                textoTMP.text = "50"; // Precio del objeto
+                textoTMP.text = "$50"; // Precio del objeto
             }
 
             Debug.Log($"Texto actualizado para {item.name}: {textoTMP.text}");
@@ -311,7 +311,7 @@ public class InventarioManager : MonoBehaviour
 
             if (textoPopup != null)
             {
-                textoPopup.text = $"¿Quieres comprar {nombreColor} por 50?";
+                textoPopup.text = $"¿Quieres comprar {nombreColor} por $50?";
             }
             else
             {

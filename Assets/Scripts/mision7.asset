@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f08386092d6ca0a46b722493d41384d9, type: 3}
-  m_Name: mision1
+  m_Name: mision7
   m_EditorClassIdentifier: 
-  missionID: M_1
-  description: "\xA1 Completa el Test ! "
+  missionID: M_7
+  description: 'Dormir tambien es importante '
   coinReward: 10
-  xpReward: 100
+  xpReward: 0

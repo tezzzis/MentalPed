@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: mision4
   m_EditorClassIdentifier: 
   missionID: M_4
-  description: m4
-  coinReward: 0
+  description: 'No olvides de tomar un poco de aire  fresco '
+  coinReward: 10
   xpReward: 0

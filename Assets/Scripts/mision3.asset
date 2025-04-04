@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: mision3
   m_EditorClassIdentifier: 
   missionID: M_3
-  description: " un back flip \xE9pico en una escaleras"
-  coinReward: 100
-  xpReward: 100
+  description: ' Haz un back flip epico en una escaleras'
+  coinReward: 10
+  xpReward: 0

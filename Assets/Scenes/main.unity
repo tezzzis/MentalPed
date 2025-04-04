@@ -3553,6 +3553,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 44ea12305923d494ba73c685b8174269, type: 2}
   - {fileID: 11400000, guid: 8c9dce2b5f4667847957a3270fbf6256, type: 2}
   - {fileID: 11400000, guid: a4a623713d3ed2d428024fb167ac2870, type: 2}
+  - {fileID: 11400000, guid: 5d7aaeb1f912790428009b5468d548e2, type: 2}
+  - {fileID: 11400000, guid: ac1f22dc22055a34bbb12587a4eb60d0, type: 2}
   allEmotionalQuestions:
   - questionID: PE_1
     questionText: "\xBFLograste descansar un poco o la mente no te dej\xF3?  "
@@ -3611,6 +3613,106 @@ MonoBehaviour:
       xpReward: 10
       score: 0
     - answerText: " No pude\u2026"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_4
+    questionText: "\xBFHubo un momento en que sentiste un respiro?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Un segundo donde respire mas profundo
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: tal vez cuando me acoste en el piso
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Solo aguante ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Fue un dia pesado
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_5
+    questionText: "\xBFTuviste un momento donde  no te sentiste solo?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Alguien me mando un mensaje ... o tu estuviste aqui
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: "Vi una serie y me senti acompa\xF1ado"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Me senti solo ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Me senti desconectado
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_6
+    questionText: "\xBFLograste soltar una cosa que te abrumaba hoy?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: "Deje una tarea para ma\xF1ana ... Y esta bien"
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Respire cuando senti  que colapsaba
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Me culpe por no poder ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: La presion me gano ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_7
+    questionText: "\xBFHubo algo, por minimo, que sintieras que hiciste?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Me levante ... o conteste un mensaje
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Recogi un calcetin del suelo
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Solo existi ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: No hoy ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+  - questionID: PE_8
+    questionText: "\xBFHubo un momento donde te sentiste mas seguro?  "
+    questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
+    answers:
+    - answerText: Me escondi bajo las cobijas
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Puse una cancion que me calma
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: Me senti fragil ...
+      coinReward: 10
+      xpReward: 10
+      score: 0
+    - answerText: El miedo me gano ...
       coinReward: 10
       xpReward: 10
       score: 0
@@ -4017,22 +4119,23 @@ MonoBehaviour:
       xpReward: 10
       score: 3
   - questionID: TB_21
-    questionText: "\xBFC\xF3mo te hablas cuando las cosas no salen?"
+    questionText: "\xDAltimamente, \xBFc\xF3mo sientes tu inter\xE9s en la intimidad
+      y el romance?"
     questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
     answers:
-    - answerText: Me recuerdo que puedo intentarlo de nuevo
+    - answerText: Late con fuerza
       coinReward: 10
       xpReward: 10
       score: 0
-    - answerText: A veces me critico, pero trato de ser amable
+    - answerText: Pulso irregular
       coinReward: 10
       xpReward: 10
       score: 1
-    - answerText: "Siento que todo lo que hago est\xE1 mal"
+    - answerText: "Latido d\xE9bil"
       coinReward: 10
       xpReward: 10
       score: 2
-    - answerText: Creo que no sirvo para nada
+    - answerText: Completamente apagada
       coinReward: 10
       xpReward: 10
       score: 3

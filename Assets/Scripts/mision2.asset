@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: mision2
   m_EditorClassIdentifier: 
   missionID: M_2
-  description: m2
-  coinReward: 0
+  description: "\xA1 Hidratate el dia de hoy !"
+  coinReward: 10
   xpReward: 0

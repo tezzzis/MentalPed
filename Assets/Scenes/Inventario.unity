@@ -6352,10 +6352,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 209528391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.009964, y: 523.91}
-  m_SizeDelta: {x: 1080, y: 1115.7}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0.0099487305, y: 523.9099}
+  m_SizeDelta: {x: 0, y: -1044.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1333060677
 GameObject:
@@ -12303,7 +12303,7 @@ SceneRoots:
   - {fileID: 1383675745}
   - {fileID: 1112430518}
   - {fileID: 713821144}
+  - {fileID: 832134689}
   - {fileID: 209528391}
   - {fileID: 487851202}
   - {fileID: 1802654242}
-  - {fileID: 832134689}
