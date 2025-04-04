@@ -112,9 +112,9 @@ public class UIManager : MonoBehaviour
         
         GameManager.Instance.CompleteEmotionalQuestion();
 
-       
+       UpdateAllUI();
         emotionalQuestionPanel.SetActive(false);
-        UpdateAllUI();
+        
     }
 
     void OnMissionButtonClicked(int missionIndex)
