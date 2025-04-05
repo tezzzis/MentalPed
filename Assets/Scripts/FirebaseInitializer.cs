@@ -9,6 +9,10 @@ using Firebase.Auth;
 public class FirebaseInitializer : MonoBehaviour
 {
     private FirebaseFirestore db;
+    private FirebaseAuth auth;
+
+    public event Action OnFirebaseReady; // Nuevo evento combinado
+
 
     public event Action OnFirestoreInitialized;
 
@@ -33,10 +37,22 @@ public class FirebaseInitializer : MonoBehaviour
           
             FirebaseApp app = FirebaseApp.DefaultInstance;
             Debug.Log("Firebase inicializado correctamente.");
+            // Inicializar Auth y escuchar cambios
+            auth = FirebaseAuth.DefaultInstance;
+            auth.StateChanged += AuthStateChanged;
 
             InitializeFirestore();
             InitializeFCM();
         });
+    }
+    private void AuthStateChanged(object sender, EventArgs e)
+    {
+        if (auth.CurrentUser != null)
+        {
+            Debug.Log("Usuario autenticado: " + auth.CurrentUser.Email);
+            // Notificar que Firebase está listo CON usuario
+            OnFirebaseReady?.Invoke();
+        }
     }
 
     private void InitializeFirestore()

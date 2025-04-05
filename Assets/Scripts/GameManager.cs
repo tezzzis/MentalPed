@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             firebaseInitializer = FindObjectOfType<FirebaseInitializer>();
             if (firebaseInitializer != null)
             {
-                firebaseInitializer.OnFirestoreInitialized += InitializeFirebaseComponents;
+                firebaseInitializer.OnFirebaseReady += InitializeFirebaseComponents;
             }
            
 
@@ -77,11 +77,28 @@ public class GameManager : MonoBehaviour
     {
         db = firebaseInitializer.GetFirestore();
         auth = FirebaseAuth.DefaultInstance;
-        userEmail = auth.CurrentUser?.Email;
+        auth.StateChanged += AuthStateChanged;
+        HandleAuthChange(auth.CurrentUser);
 
         Debug.Log("Componentes de Firebase inicializados en GameManager");
     }
-    
+    private void AuthStateChanged(object sender, EventArgs e)
+    {
+        HandleAuthChange(auth.CurrentUser);
+    }
+    private void HandleAuthChange(FirebaseUser user)
+    {
+        if (user != null && !string.IsNullOrEmpty(user.Email))
+        {
+            userEmail = user.Email;
+            Debug.Log("Usuario autenticado: " + userEmail);
+        }
+        else
+        {
+            Debug.Log("Usuario no autenticado.");
+        }
+    }
+
 
     void InitializeGameData()
     {
