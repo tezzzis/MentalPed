@@ -92,6 +92,8 @@ public class GameManager : MonoBehaviour
         {
             userEmail = user.Email;
             Debug.Log("Usuario autenticado: " + userEmail);
+
+            LoadCoinsFromFirestore();
         }
         else
         {
@@ -481,6 +483,44 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("No hay suficientes monedas para gastar");
     }
+}
+
+public void LoadCoinsFromFirestore()
+{
+    if (string.IsNullOrEmpty(userEmail))
+    {
+        Debug.LogWarning("No se puede cargar monedas: usuario no autenticado.");
+        return;
+    }
+
+    DocumentReference docRef = db.Collection("users").Document(userEmail);
+    docRef.GetSnapshotAsync().ContinueWithOnMainThread(task =>
+    {
+        if (task.IsCompletedSuccessfully)
+        {
+            DocumentSnapshot snapshot = task.Result;
+
+            if (snapshot.Exists && snapshot.ContainsField("coins"))
+            {
+                int firestoreCoins = snapshot.GetValue<int>("coins");
+                gameData.coins = firestoreCoins;
+                SaveGameData();
+                OnDataChanged?.Invoke(); // Notifica para actualizar la UI
+                Debug.Log("Monedas cargadas desde Firestore: " + firestoreCoins);
+            }
+            else
+            {
+                Debug.Log("El documento no tiene campo 'coins', se asigna 0.");
+                gameData.coins = 0;
+                SaveGameData();
+                OnDataChanged?.Invoke();
+            }
+        }
+        else
+        {
+            Debug.LogError("Error al obtener monedas desde Firestore: " + task.Exception);
+        }
+    });
 }
 
 /// <summary>

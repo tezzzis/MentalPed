@@ -114,10 +114,29 @@ private Dictionary<string, bool> CrearInventarioInicial()
 {
     return new Dictionary<string, bool>
     {
-        { "cabeza_1", false },
+        { "cabeza_1", true },
         { "cabeza_2", false },
-        { "cuerpo_1", false },
-        { "cuerpo_2", false }
+        { "cabeza_3", false },
+        { "cabeza_4", false },
+
+        { "cuerpo_1", true },
+        { "cuerpo_2", false },
+        { "cuerpo_3", false },
+        { "cuerpo_4", false },
+        { "cuerpo_5", false },
+        { "cuerpo_6", false },
+
+        { "corbata_1", true},
+        { "corbata_2", false},
+        { "corbata_3", false},
+        { "corbata_4", false},
+        { "corbata_5", false},
+
+        { "zapatos_1", true },
+        { "zapatos_2", false },
+        { "zapatos_3", false },
+        { "zapatos_4", false },
+        { "zapatos_5", false }
     };
 }
 

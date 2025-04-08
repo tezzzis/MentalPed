@@ -3,7 +3,7 @@ using TMPro;
 
 public class MostrarCoins : MonoBehaviour
 {
-    public TMP_Text coinsText; // Asigna el componente TextMeshPro en el Inspector
+    public TMP_Text coinsText; // Asigna el componente TextMeshPro en el Inspector 
 
     void Start()
     {
@@ -12,9 +12,9 @@ public class MostrarCoins : MonoBehaviour
         
         // Suscribirse al evento OnDataChanged para actualizar cuando se modifiquen los datos
         if (GameManager.Instance != null)
-        {
-            GameManager.Instance.OnDataChanged += UpdateCoinDisplay;
-        }
+{
+    GameManager.Instance.OnDataChanged += UpdateCoinDisplay;
+}
     }
 
     // Método para actualizar la UI con el valor de monedas

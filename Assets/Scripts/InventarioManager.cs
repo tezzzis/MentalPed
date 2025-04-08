@@ -49,6 +49,9 @@ public class InventarioManager : MonoBehaviour
         }
     }
 
+ public void desactivar()  {
+    panelCompra.SetActive(false);
+ }
     // Carga el color previamente guardado usando PlayerPrefs
     void CargarColorGuardado()
     {
