@@ -687,7 +687,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -330, y: -187}
+  m_AnchoredPosition: {x: -330, y: -183}
   m_SizeDelta: {x: 350.854, y: 110.24304}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &98061858
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1899,10 +1899,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1313285058}
-  - {fileID: 1081270463}
   - {fileID: 1942347360}
   - {fileID: 1592657105}
   - {fileID: 1333060678}
+  - {fileID: 1081270463}
   - {fileID: 7189841908444678223}
   - {fileID: 1222854733}
   - {fileID: 98061857}
@@ -7407,7 +7407,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 862}
+  m_SizeDelta: {x: 1017.621, y: 862}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916190872
 MonoBehaviour:
@@ -8489,7 +8489,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.0899963, y: 0}
+  m_AnchoredPosition: {x: -2.0899963, y: 35}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1067626843
@@ -8564,8 +8564,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 183.367}
-  m_SizeDelta: {x: 1080, y: 366.733}
+  m_AnchoredPosition: {x: 0, y: 132.11188}
+  m_SizeDelta: {x: 1080, y: 264.222}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081270464
 MonoBehaviour:
@@ -10996,8 +10996,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00017262, y: -339.48303}
-  m_SizeDelta: {x: 1080, y: 0}
+  m_AnchoredPosition: {x: -0.010327, y: -352}
+  m_SizeDelta: {x: 1019.1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333060679
 MonoBehaviour:
@@ -11437,7 +11437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030517578, y: 405.2646}
+  m_AnchoredPosition: {x: 0.000030517578, y: 405.26492}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1378052472
@@ -13132,7 +13132,7 @@ RectTransform:
   m_GameObject: {fileID: 1592657104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.9999237, y: 0.9999237, z: 0.9999237}
+  m_LocalScale: {x: 0.9427503, y: 0.9427503, z: 0.9427503}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1615053636}
@@ -13142,7 +13142,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: -79.62329}
+  m_AnchoredPosition: {x: 0, y: -75}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1592657106
@@ -16451,7 +16451,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 484.93}
+  m_AnchoredPosition: {x: 8, y: 466}
   m_SizeDelta: {x: 527.641, y: 808.59}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1948794150
@@ -17979,7 +17979,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 713821143}
         m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
         m_MethodName: GoToDiarias
         m_Mode: 1
@@ -18691,7 +18691,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 0
+  m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -18711,11 +18711,23 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 7042903696787281844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 713821143}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: GoToMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &5353106821529681476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19083,7 +19095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -25}
+  m_AnchoredPosition: {x: 0, y: -24.999939}
   m_SizeDelta: {x: 393, y: 126}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &7226143445617786163
@@ -19377,7 +19389,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 174322480169061514}
   m_OnClick:
     m_PersistentCalls:
