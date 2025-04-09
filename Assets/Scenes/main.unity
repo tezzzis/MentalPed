@@ -3317,6 +3317,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a4a623713d3ed2d428024fb167ac2870, type: 2}
   - {fileID: 11400000, guid: 5d7aaeb1f912790428009b5468d548e2, type: 2}
   - {fileID: 11400000, guid: ac1f22dc22055a34bbb12587a4eb60d0, type: 2}
+  - {fileID: 11400000, guid: 196db9ffa2a89124bbb4a2d5c33970c1, type: 2}
+  - {fileID: 11400000, guid: 146c916a8db5b8e4bbd69a64a3bc43a0, type: 2}
+  - {fileID: 11400000, guid: f98774c59cc25fb4195dc01d6c07c6e7, type: 2}
+  - {fileID: 11400000, guid: 790c2b2d16d7844478b18b704c2ca796, type: 2}
+  - {fileID: 11400000, guid: 8dc73768698c24c4a92077bbabff9b46, type: 2}
+  - {fileID: 11400000, guid: 6220f2a4ba43bc54fa7df90b20b4b416, type: 2}
+  - {fileID: 11400000, guid: 591187f1fdc7df34697413dc39714466, type: 2}
+  - {fileID: 11400000, guid: 36a8a068e55650040a751e60634d91f8, type: 2}
+  - {fileID: 11400000, guid: 9d1e98b5e5be0bd48a12e09bbdda3b0e, type: 2}
+  - {fileID: 11400000, guid: 7a040d2812394d640858eda7c4e4d4cd, type: 2}
   allEmotionalQuestions:
   - questionID: PE_1
     questionText: "\xBFLograste descansar un poco o la mente no te dej\xF3?  "
@@ -3780,22 +3790,23 @@ MonoBehaviour:
       xpReward: 10
       score: 3
   - questionID: TB_16
-    questionText: "\xBFC\xF3mo ha sido tu viaje al mundo de los sue\xF1os?"
+    questionText: "\xBFC\xF3mo va el ritmo de sue\xF1o en estos d\xEDas?"
     questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
     answers:
-    - answerText: "Tranquilo, como un r\xEDo bajo la luna"
+    - answerText: Duermo igual que siempre, sin cambios
       coinReward: 10
       xpReward: 10
       score: 0
-    - answerText: "Algo inquieto, pero logr\xE9 descansar"
+    - answerText: Estoy durmiendo un poco menos de lo normal.
       coinReward: 10
       xpReward: 10
       score: 1
-    - answerText: "Lleno de obst\xE1culos y pesadillas"
+    - answerText: "Duermo much\xEDsimo menos, apenas logro descansar"
       coinReward: 10
       xpReward: 10
       score: 2
-    - answerText: "No pude viajar\u2026 me quede a la orilla"
+    - answerText: Me despierto horas antes de lo habitual y ya no puedo volver a
+        dormir.
       coinReward: 10
       xpReward: 10
       score: 3
@@ -3820,23 +3831,22 @@ MonoBehaviour:
       xpReward: 10
       score: 3
   - questionID: TB_18
-    questionText: "\xBFC\xF3mo est\xE1 el jard\xEDn de tu cuerpo hoy? \xBFLas flores
-      piden agua o hay tierra sedienta?"
+    questionText: "\xBFC\xF3mo va tu hambre en esta traves\xEDa?"
     questionImage: {fileID: 21300000, guid: b441d9ae6b36d78469b90b2eab15d7ae, type: 3}
     answers:
-    - answerText: "Las flores est\xE1n regadas y felices"
+    - answerText: Todo normal. Como igual que siempre
       coinReward: 10
       xpReward: 10
       score: 0
-    - answerText: "Algunas plantas piden m\xE1s cuidado\u2026 "
+    - answerText: Tengo un poco menos de apetito de lo habitual.
       coinReward: 10
       xpReward: 10
       score: 1
-    - answerText: "La tierra est\xE1 seca\u2026 las ra\xEDces no alcanzan"
+    - answerText: Mi apetito ha bajado mucho, casi no tengo ganas de comer.
       coinReward: 10
       xpReward: 10
       score: 2
-    - answerText: "El jard\xEDn parece dormido\u2026 sin peticiones"
+    - answerText: "No tengo nada de apetito, podr\xEDa pasar el d\xEDa sin comer."
       coinReward: 10
       xpReward: 10
       score: 3
@@ -7082,7 +7092,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: -24.999939}
+  m_AnchoredPosition: {x: 0, y: -25.000427}
   m_SizeDelta: {x: 393, y: 126}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &6566760845872321796
