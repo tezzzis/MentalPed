@@ -271,14 +271,14 @@ public class InventarioManager : MonoBehaviour
 
 private Dictionary<string, int> preciosItems = new Dictionary<string, int>()
 {
-    { "prueba_Escenario1", 12 },
-    { "prueba_Escenario2", 12 },
-    { "prueba_Escenario3", 12 },
-    { "prueba_Escenario4", 12 },
-    { "prueba_Escenario5", 12 },
-    { "prueba_Escenario6", 12 },
-    { "prueba_Escenario7", 12 },
-    { "prueba_Escenario8", 12 }
+    { "prueba_Escenario1", 50 },
+    { "prueba_Escenario2", 50 },
+    { "prueba_Escenario3", 50 },
+    { "prueba_Escenario4", 50 },
+    { "prueba_Escenario5", 50 },
+    { "prueba_Escenario6", 50 },
+    { "prueba_Escenario7", 50 },
+    { "prueba_Escenario8", 50 }
 };
 
     // Devuelve un color basado en el nombre del item seleccionado
