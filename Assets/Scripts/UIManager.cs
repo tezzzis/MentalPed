@@ -236,10 +236,10 @@ public class UIManager : MonoBehaviour
 
         // Interpretaci�n b�sica
         string interpretation = "";
-        if (GameManager.Instance.GameData.beckTotalScore <= 13) interpretation = "Depresi�n m�nima";
-        else if (GameManager.Instance.GameData.beckTotalScore <= 19) interpretation = "Depresi�n leve";
-        else if (GameManager.Instance.GameData.beckTotalScore <= 28) interpretation = "Depresi�n moderada";
-        else interpretation = "Depresi�n severa";
+        if (GameManager.Instance.GameData.beckTotalScore <= 13) interpretation = "Depresión mínima";
+        else if (GameManager.Instance.GameData.beckTotalScore <= 19) interpretation = "Depresión leve";
+        else if (GameManager.Instance.GameData.beckTotalScore <= 28) interpretation = "Depresión moderada";
+        else interpretation = "Depresión severa";
 
         beckFinalScoreText.text += $"\n({interpretation})";
     }
@@ -261,7 +261,7 @@ public class UIManager : MonoBehaviour
             if (i < dailyMissions.Count)
             {
                 Mission m = dailyMissions[i];
-                missionButtonTexts[i].text = $"{m.description}\n          <sprite name=\"coin\"> {m.coinReward}";
+                missionButtonTexts[i].text = $"{m.description}\n<sprite name=\"coin\">{m.coinReward}";
 
 
 
@@ -273,7 +273,7 @@ public class UIManager : MonoBehaviour
             else
             {
                 
-                missionButtonTexts[i].text = "Misi�n no disponible";
+                missionButtonTexts[i].text = "Misión no disponible";
                 missionButtons[i].interactable = false;
                 
             }

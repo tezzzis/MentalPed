@@ -176,7 +176,8 @@ public class InventarioManager : MonoBehaviour
             else
             {
                 img.color = Color.gray; // Indicar que está bloqueado
-                textoTMP.text = "$50"; // Precio del objeto
+                int precio = preciosItems.ContainsKey(item.name) ? preciosItems[item.name] : 50;
+                textoTMP.text = $"${precio}";
             }
 
             Debug.Log($"Texto actualizado para {item.name}: {textoTMP.text}");
@@ -268,6 +269,18 @@ public class InventarioManager : MonoBehaviour
     { "prueba_Escenario8", "Lila Claro" }
 };
 
+private Dictionary<string, int> preciosItems = new Dictionary<string, int>()
+{
+    { "prueba_Escenario1", 12 },
+    { "prueba_Escenario2", 12 },
+    { "prueba_Escenario3", 12 },
+    { "prueba_Escenario4", 12 },
+    { "prueba_Escenario5", 12 },
+    { "prueba_Escenario6", 12 },
+    { "prueba_Escenario7", 12 },
+    { "prueba_Escenario8", 12 }
+};
+
     // Devuelve un color basado en el nombre del item seleccionado
     Color ObtenerColorParaItem(string nombreItem)
     {
@@ -314,7 +327,8 @@ public class InventarioManager : MonoBehaviour
 
             if (textoPopup != null)
             {
-                textoPopup.text = $"¿Quieres comprar {nombreColor} por $50?";
+                int precio = preciosItems.ContainsKey(itemObjeto.name) ? preciosItems[itemObjeto.name] : 50;
+                textoPopup.text = $"¿Quieres comprar {nombreColor} por ${precio}?";
             }
             else
             {
@@ -343,7 +357,7 @@ public class InventarioManager : MonoBehaviour
 
     async void RealizarCompra(string claveItem, GameObject itemObjeto)
 {
-    int precio = 50;
+    int precio = preciosItems.ContainsKey(itemObjeto.name) ? preciosItems[itemObjeto.name] : 50;
     
     // Verificar que se tienen suficientes monedas usando GameManager
     if (GameManager.Instance.GameData.coins >= precio)

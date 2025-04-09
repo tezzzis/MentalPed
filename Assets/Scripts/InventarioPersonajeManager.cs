@@ -39,6 +39,17 @@ public class InventarioPersonajeManager : MonoBehaviour
         {"cabeza_2", "Gorro"},
         { "cabeza_3", "Moño" },
         { "cabeza_4", "Boina" },
+        { "cabeza_5", "Gorra" },
+        { "cabeza_6", "Sombrero vaquero" },
+        { "cabeza_7", "Sombrero elegante" },
+        { "cabeza_8", "Sombrero fiestero" },
+        { "cabeza_9", "Gorro de cumpleaños" },
+        { "cabeza_10", "Bonbín" },
+        { "cabeza_11", "Gorro de juglar" },
+        { "cabeza_12", "Tajada de pan" },
+        { "cabeza_13", "Pera" },
+        { "cabeza_14", "Calabaza" },
+
         
         // Nombres para items de cuerpo
         {"cuerpo_1", "Nada"},
@@ -47,19 +58,78 @@ public class InventarioPersonajeManager : MonoBehaviour
         { "cuerpo_4", "Gafas de estrellas" },
         { "cuerpo_5", "Gafas rosas" },
         { "cuerpo_6", "Gafas naranjas" },
+        { "cuerpo_7", "Gafas blancas" },
+        { "cuerpo_8", "Gafas retro" },
+        { "cuerpo_9", "Gafas 3D" },
+        { "cuerpo_10", "Gafas cool" },
+        { "cuerpo_11", "Nariz de payaso" },
 
         { "corbata_1", "Nada"},
         { "corbata_2", "Corbatin negro"},
         { "corbata_3", "corbatin turquesa"},
         { "corbata_4", "Pañoleta"},
         { "corbata_5", "Collar"},
+        { "corbata_6", "Pañoleta roja"},
+        { "corbata_7", "Bufanda"},
+        { "corbata_8", "Collar de perlas"},
 
         { "zapatos_1", "Nada" },
         { "zapatos_2", "Zapatos rojos" },
-        { "zapatos_3", "Zapatos rosados" },
-        { "zapatos_4", "Zapatos amarillos" },
-        { "zapatos_5", "Zapatos verdes" }
+        { "zapatos_3", "Tacones" },
+        { "zapatos_4", "Botas" },
+        { "zapatos_5", "Zapatos amarillos" },
+        { "zapatos_6", "Zapatos negros" },
+        { "zapatos_7", "Zapatos payaso" },
+        { "zapatos_8", "Zapatos cafes" }
     };
+
+    private Dictionary<string, int> preciosItems = new Dictionary<string, int>()
+{
+    { "cabeza_1", 0 }, // Nada siempre puede ser gratis
+    { "cabeza_2", 50 },
+    { "cabeza_3", 70 },
+    { "cabeza_4", 90 },
+    { "cabeza_5", 90 },
+    { "cabeza_6", 90 },
+    { "cabeza_7", 90 },
+    { "cabeza_8", 90 },
+    { "cabeza_9", 90 },
+    { "cabeza_10", 90 },
+    { "cabeza_11", 90 },
+    { "cabeza_12", 90 },
+    { "cabeza_13", 90 },
+    { "cabeza_14", 90 },
+
+    { "cuerpo_1", 0 },
+    { "cuerpo_2", 60 },
+    { "cuerpo_3", 60 },
+    { "cuerpo_4", 75 },
+    { "cuerpo_5", 80 },
+    { "cuerpo_6", 100 },
+    { "cuerpo_7", 100 },
+    { "cuerpo_8", 100 },
+    { "cuerpo_9", 100 },
+    { "cuerpo_10", 100 },
+    { "cuerpo_11", 100 },
+
+    { "corbata_1", 0 },
+    { "corbata_2", 50 },
+    { "corbata_3", 55 },
+    { "corbata_4", 65 },
+    { "corbata_5", 85 },
+    { "corbata_6", 85 },
+    { "corbata_7", 85 },
+    { "corbata_8", 85 },
+
+    { "zapatos_1", 0 },
+    { "zapatos_2", 60 },
+    { "zapatos_3", 70 },
+    { "zapatos_4", 80 },
+    { "zapatos_5", 80 },
+    { "zapatos_6", 80 },
+    { "zapatos_7", 80 },
+    { "zapatos_8", 90 }
+};
 
     private FirebaseFirestore db;
     private FirebaseUser user;
@@ -181,7 +251,8 @@ public class InventarioPersonajeManager : MonoBehaviour
         else
         {
             img.color = new Color(1f, 1f, 1f, 0.5f);
-            texto.text = "$50";
+            int precio = preciosItems.ContainsKey(claveBD) ? preciosItems[claveBD] : 50;
+            texto.text = $"${precio}";
         }
 
         Button btn = item.GetComponent<Button>();
@@ -245,7 +316,8 @@ public class InventarioPersonajeManager : MonoBehaviour
         panelCompra.SetActive(true);
         
         string nombreItem = nombresItems.ContainsKey(claveBD) ? nombresItems[claveBD] : "este ítem";
-        textoPopup.text = $"¿Quieres comprar {nombreItem} por $50?";
+        int precio = preciosItems.ContainsKey(claveBD) ? preciosItems[claveBD] : 50;
+        textoPopup.text = $"¿Quieres comprar {nombreItem} por ${precio}?";
 
         btnComprar.onClick.RemoveAllListeners();
         btnComprar.onClick.AddListener(() => RealizarCompra(claveBD, item, tipo));
@@ -256,7 +328,7 @@ public class InventarioPersonajeManager : MonoBehaviour
 
     async void RealizarCompra(string claveBD, GameObject item, string tipo)
     {
-        int precio = 50;
+        int precio = preciosItems.ContainsKey(claveBD) ? preciosItems[claveBD] : 50;
         
         if (GameManager.Instance.GameData.coins >= precio)
         {

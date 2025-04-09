@@ -118,6 +118,16 @@ private Dictionary<string, bool> CrearInventarioInicial()
         { "cabeza_2", false },
         { "cabeza_3", false },
         { "cabeza_4", false },
+        { "cabeza_5", false },
+        { "cabeza_6", false },
+        { "cabeza_7", false },
+        { "cabeza_8", false },
+        { "cabeza_9", false },
+        { "cabeza_10", false },
+        { "cabeza_11", false },
+        { "cabeza_12", false },
+        { "cabeza_13", false },
+        { "cabeza_14", false },
 
         { "cuerpo_1", true },
         { "cuerpo_2", false },
@@ -125,18 +135,29 @@ private Dictionary<string, bool> CrearInventarioInicial()
         { "cuerpo_4", false },
         { "cuerpo_5", false },
         { "cuerpo_6", false },
+        { "cuerpo_7", false },
+        { "cuerpo_8", false },
+        { "cuerpo_9", false },
+        { "cuerpo_10", false },
+        { "cuerpo_11", false },
 
         { "corbata_1", true},
         { "corbata_2", false},
         { "corbata_3", false},
         { "corbata_4", false},
         { "corbata_5", false},
+        { "corbata_6", false},
+        { "corbata_7", false},
+        { "corbata_8", false},
 
         { "zapatos_1", true },
         { "zapatos_2", false },
         { "zapatos_3", false },
         { "zapatos_4", false },
-        { "zapatos_5", false }
+        { "zapatos_5", false },
+        { "zapatos_6", false },
+        { "zapatos_7", false },
+        { "zapatos_8", false }
     };
 }
 

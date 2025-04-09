@@ -14,8 +14,9 @@ public class DiaryManager : MonoBehaviour
     public Button tristeButton;
     public TMP_InputField inputField;
     public Button guardarButton;
+    public GameObject contenedorCosas;
 
-    [Header("Panel de Confirmaci�n")]
+    [Header("Panel de Confirmacion")]
     public GameObject panelExito;
     public TMP_Text textoExito;
     public Button botonRegresar;
@@ -46,6 +47,7 @@ public class DiaryManager : MonoBehaviour
         emocionSeleccionada = emocion;
         inputField.gameObject.SetActive(true);
         guardarButton.gameObject.SetActive(true);
+        contenedorCosas.gameObject.SetActive(true);
     }
 
     async void GuardarEntrada()
