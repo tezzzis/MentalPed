@@ -26,7 +26,9 @@ public class UIManager : MonoBehaviour
     [Header("Preguntas Beck")]
     public Button beckQuestionButton;
     public TMP_Text beckQuestionButtonText;
-   
+    public GameObject avisopanel;
+    public Button continuartest;
+
 
     [Header("Panel Pregunta Beck")]
     public GameObject beckQuestionPanel;
@@ -66,6 +68,7 @@ public class UIManager : MonoBehaviour
         regresarbeck.onClick.AddListener(Regresarbeck);
         regresarResultadobeck.onClick.AddListener(Regresarbeck);
         beckQuestionButton.onClick.AddListener(OnBeckQuestionClicked);
+        continuartest.onClick.AddListener(comenzartest);
 
         UpdateAllUI();
     }
@@ -165,7 +168,13 @@ public class UIManager : MonoBehaviour
         {
             SetupBeckPanel(question);
             beckQuestionPanel.SetActive(true);
+            //avisopanel.SetActive(true);
         }
+
+    }
+    void comenzartest()
+    {
+        avisopanel.SetActive(false);
     }
 
     void SetupBeckPanel(BeckQuestion question)

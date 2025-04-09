@@ -1,4 +1,4 @@
-Library: C:\Users\Proyecto\Downloads\Nueva carpeta (2)\MentalPed\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
+Library: D:\Unityprojectos\nuevoclon\MentalPed\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --platform=Android
 --backend=burst-llvm-16
 --target=ARMV7A_NEON32
@@ -8,10 +8,10 @@ Library: C:\Users\Proyecto\Downloads\Nueva carpeta (2)\MentalPed\Temp\BurstOutpu
 --float-precision=Standard
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
---temp-folder=C:\Users\Proyecto\Downloads\Nueva carpeta (2)\MentalPed\Temp\Burst
---key-folder=C:/Program Files/Unity/Hub/Editor/2022.3.36f1/Editor/Data/PlaybackEngines/AndroidPlayer
---decode-folder=C:\Users\Proyecto\Downloads\Nueva carpeta (2)\MentalPed\Library\Burst
---output=C:\Users\Proyecto\Downloads\Nueva carpeta (2)\MentalPed\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
+--temp-folder=D:\Unityprojectos\nuevoclon\MentalPed\Temp\Burst
+--key-folder=D:/programas/2022.3.36f1/Editor/Data/PlaybackEngines/AndroidPlayer
+--decode-folder=D:\Unityprojectos\nuevoclon\MentalPed\Library\Burst
+--output=D:\Unityprojectos\nuevoclon\MentalPed\Temp\BurstOutput\tempburstlibs\armeabi-v7a\lib_burst_generated
 --pdb-search-paths=Temp/ManagedSymbols/
 
 
